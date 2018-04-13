@@ -26,6 +26,7 @@ describe('Service: clusterFilterService', function() {
       CLUSTER_FILTER_MODEL,
       CLUSTER_SERVICE,
       require('./mockApplicationData.js').name,
+      'ui.router',
     );
     mock.inject(function(
       clusterFilterService: ClusterFilterService,
@@ -184,7 +185,7 @@ describe('Service: clusterFilterService', function() {
   });
 
   describe('filter by region', function() {
-    it('1 region: should filter by that region ', function(done) {
+    fit('1 region: should filter by that region ', function(done) {
       clusterFilterModel.asFilterModel.sortFilter.region = { 'us-west-1': true };
       const expected: any = _.filter(groupedJSON, { subgroups: [{ heading: 'in-us-west-1-only' }] });
       service.updateClusterGroups(application);

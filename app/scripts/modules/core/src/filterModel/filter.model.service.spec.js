@@ -14,6 +14,8 @@ describe('Service: FilterModelService', function() {
     filterModel.activate();
   }
 
+  beforeEach(window.module('ui.router'));
+
   beforeEach(
     window.inject(function(_$location_, _$stateParams_, _$state_) {
       $location = _$location_;
